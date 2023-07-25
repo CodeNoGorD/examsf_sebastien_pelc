@@ -1,0 +1,18 @@
+
+$police_titre: Merienda;
+$police_texte: Roboto;
+
+@mixin googleFonts($nom){
+  @import url('https://fonts.googleapis.com/css2?family=' + $nom + '&display=swap');
+}
+
+@include googleFonts($police_titre);
+
+$primary: #7346af;
+$secondary: #18539b;
+$success: #33764a;
+$info: #38e6d7;
+$warning: #dc7e48;
+$danger: #c72222;
+$light: #eae3e3;
+$dark: #252424;
