@@ -1,12 +1,14 @@
 
-$police_titre: Merienda;
+$police_titre1: Handjet;
+$police_titre2: Merienda;
 $police_texte: Roboto;
 
 @mixin googleFonts($nom){
   @import url('https://fonts.googleapis.com/css2?family=' + $nom + '&display=swap');
 }
 
-@include googleFonts($police_titre);
+@include googleFonts($police_titre1);
+@include googleFonts($police_titre2);
 
 $primary: #7346af;
 $secondary: #18539b;
