@@ -16,18 +16,23 @@
 </head>
 <body>
 <header class="header">
-    <nav class="navbar">
-        <a href="#" class="navbar-brand"><span>W</span>eb<span>D</span>ev</a>
-        <!--     <a href="#" class="navbar-brand"><img src="https://www.dropbox.com/s/zzwcz0xpj95sy7p/logo%20%2810%29.png?raw=1" style="width: 50px; vertical-align: middle;"></a> -->
-        <ul>
-            <li><a href="#html">HTML</a></li>
-            <li><a href="#css">CSS</a></li>
-            <li><a href="#javascript">JavaScript</a></li>
-        </ul>
-        <button class="navbar-toggler">
-            <span></span>
-        </button>
+    <nav>
+        <div class="container">
+            <h1 class="logo">Generic<span>Logo</span></h1>
+            <ul class="site-nav">
+                <li><a href="#"><i class="fa fa-home site-nav--icon"></i>Home</a></li>
+                <li><a href="#"><i class="fa fa-info site-nav--icon"></i>About</a></li>
+                <li><a href="#"><i class="fa fa-pencil site-nav--icon"></i>Blog</a></li>
+                <li><a href="#"><i class="fa fa-usd site-nav--icon"></i>Pricing</a></li>
+                <li><a href="#"><i class="fa fa-envelope site-nav--icon"></i>Contact</a></li>
+            </ul>
+
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </div>
     </nav>
+
 </header>
 {% block body %}{% endblock %}
 </body>
