@@ -16,23 +16,28 @@
 </head>
 <body>
 <header class="header">
-    <nav>
-        <div class="container">
-            <h1 class="logo">Generic<span>Logo</span></h1>
-            <ul class="site-nav">
-                <li><a href="#"><i class="fa fa-home site-nav--icon"></i>Home</a></li>
-                <li><a href="#"><i class="fa fa-info site-nav--icon"></i>About</a></li>
-                <li><a href="#"><i class="fa fa-pencil site-nav--icon"></i>Blog</a></li>
-                <li><a href="#"><i class="fa fa-usd site-nav--icon"></i>Pricing</a></li>
-                <li><a href="#"><i class="fa fa-envelope site-nav--icon"></i>Contact</a></li>
-            </ul>
-
-            <div class="menu-toggle">
-                <div class="hamburger"></div>
-            </div>
+    <nav class="navbar container">
+        <a href="#" class="nav__logo">WebSite</a>
+        <ul class="nav-menu">
+            <a href="#" class="nav-link">
+                <li class="nav-item">Home</li>
+            </a>
+            <a href="#" class="nav-link">
+                <li class="nav-item">Services</li>
+            </a>
+            <a href="#" class="nav-link">
+                <li class="nav-item">Blog</li>
+            </a>
+            <a href="#" class="nav-link">
+                <li class="nav-item">Contact</li>
+            </a>
+        </ul>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
     </nav>
-
 </header>
 {% block body %}{% endblock %}
 </body>

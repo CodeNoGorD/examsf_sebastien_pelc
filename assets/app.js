@@ -8,10 +8,12 @@ import { Tooltip, Toast, Popover } from 'bootstrap'
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
 
-const menuToggle = document.querySelector('.menu-toggle');
-const siteNav = document.querySelector('.site-nav');
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-menuToggle.addEventListener('click', () => {
-    siteNav.classList.toggle('site-nav--open');
-    siteNav.classList.toggle('open');
-});
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
