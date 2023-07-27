@@ -11,10 +11,13 @@ html {
     font-size: 62.5%;
     font-family: "Roboto", sans-serif;
 }
+h1{
+    font-size: 3rem;
+}
 li {
     margin: 1.2rem 0rem;
     list-style: none;
-    border: 3px solid #482ff7;
+    border: 3px solid #309C8E;
     border-radius: 2rem;
     width: 15rem;
     padding: 1rem 2.5rem;
@@ -58,12 +61,12 @@ a {
     color: #fff;
     margin-left: 5rem;
     text-align: center;
-    background: #482ff7;
+    background: #309C8E;
     transition: all 0.4s ease;
 }
 .nav-item:hover {
     background: #fff;
-    color: #482ff7;
+    color: #309C8E;
     font-weight: bold;
     transform: translateY(2px);
 }
