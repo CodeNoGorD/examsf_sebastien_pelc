@@ -38,7 +38,7 @@ class UserFixtures extends Fixture
         $testUser->setContract('CDI');
 
         $manager->persist($testAdmin);
-        $manager->persist($testAdmin);
+        $manager->persist($testUser);
         $manager->flush();
     }
 }
