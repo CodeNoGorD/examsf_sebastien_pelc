@@ -18,7 +18,7 @@ class UserFixtures extends Fixture
         $testAdmin = new User();
         $testAdmin->setEmail('rh@humanbooster.com');
         $testAdmin->setRoles(["ROLE_RH"]);
-        $encodedPassword = $this->hasher->hashPassword($testAdmin, '‘rh123@');
+        $encodedPassword = $this->hasher->hashPassword($testAdmin, 'rh123@');
         $testAdmin->setPassword($encodedPassword);
         $testAdmin->setName('PELC');
         $testAdmin->setFirstName('sebastien');
