@@ -34,15 +34,15 @@
                     <li class="nav-item">Annuaire</li>
                 </a>
             {% endif %}
-            {% if (app.user is not null) %}
-            <a href="{{ path('app_logout') }}" class="nav-link">
-                <li class="nav-item">Se déconnecter</li>
-            </a>
-            {% endif %}
             {% if (app.user is not null and app.user.hasRole("ROLE_RH")) %}
                 <a href="{{ path('app_home') }}" class="nav-link">
                     <li class="nav-item">Admin</li>
                 </a>
+            {% endif %}
+            {% if (app.user is not null) %}
+            <a href="{{ path('app_logout') }}" class="nav-link">
+                <li class="nav-item">Deconnexion</li>
+            </a>
             {% endif %}
         </ul>
         <div class="hamburger">
