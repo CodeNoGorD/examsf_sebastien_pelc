@@ -22,11 +22,22 @@ class UserFixtures extends Fixture
         $testAdmin->setPassword($encodedPassword);
         $testAdmin->setName('PELC');
         $testAdmin->setFirstName('sebastien');
-        $testAdmin->setPicture('Photo.jpg');
+        $testAdmin->setPicture('rh.jpg');
         $testAdmin->setSector('RH');
         $testAdmin->setContract('CDI');
-//        $testAdmin->setDateContract('');
 
+        $testUser = new User();
+        $testUser->setEmail('gr@humanbooster.com');
+        $testUser->setRoles(["ROLE_USER"]);
+        $encodedPassword = $this->hasher->hashPassword($testUser, 'test');
+        $testUser->setPassword($encodedPassword);
+        $testUser->setName('ROBBE');
+        $testUser->setFirstName('gladys');
+        $testUser->setPicture('photoGR.jpg');
+        $testUser->setSector('Informatique,');
+        $testUser->setContract('CDI');
+
+        $manager->persist($testAdmin);
         $manager->persist($testAdmin);
         $manager->flush();
     }
