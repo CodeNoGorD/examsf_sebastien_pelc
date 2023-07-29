@@ -20,8 +20,8 @@ class UserFixtures extends Fixture
         $testAdmin->setRoles(["ROLE_RH"]);
         $encodedPassword = $this->hasher->hashPassword($testAdmin, 'rh123@');
         $testAdmin->setPassword($encodedPassword);
-        $testAdmin->setName('PELC');
-        $testAdmin->setFirstName('sebastien');
+        $testAdmin->setName('ROBBE');
+        $testAdmin->setFirstName('Gladys');
         $testAdmin->setPicture('rh.jpg');
         $testAdmin->setSector('RH');
         $testAdmin->setContract('CDI');
@@ -31,10 +31,10 @@ class UserFixtures extends Fixture
         $testUser->setRoles(["ROLE_USER"]);
         $encodedPassword = $this->hasher->hashPassword($testUser, 'test');
         $testUser->setPassword($encodedPassword);
-        $testUser->setName('ROBBE');
-        $testUser->setFirstName('gladys');
-        $testUser->setPicture('photoGR.jpg');
-        $testUser->setSector('Informatique,');
+        $testUser->setName('nom');
+        $testUser->setFirstName('prenom');
+        $testUser->setPicture('test.jpg');
+        $testUser->setSector('Informatique');
         $testUser->setContract('CDI');
 
         $manager->persist($testAdmin);

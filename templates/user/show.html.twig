@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>User</h1>
-
+    <img src="{{ asset(user.picture) }}" alt="" width="400">
     <table class="table">
         <tbody>
             <tr>
@@ -49,6 +49,8 @@
             </tr>
         </tbody>
     </table>
+
+
 
     <a href="{{ path('app_user_index') }}">back to list</a>
 
