@@ -17,15 +17,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: false)]
     #[Assert\NotBlank(message: 'Veuillez saisir un nom.')]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: false)]
     #[Assert\NotBlank(message: 'Veuillez saisir un prénom.')]
     private ?string $firstname = null;
 
-    #[ORM\Column(length: 180, unique: true)]
+    #[ORM\Column(length: 180, unique: true, nullable: false)]
     #[Assert\NotBlank(message: 'Veuillez saisir un email.')]
     private ?string $email = null;
 
@@ -42,10 +42,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     )]
     private ?string $password = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: false)]
     private ?string $sector = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: false)]
     private ?string $contract = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]

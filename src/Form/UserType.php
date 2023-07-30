@@ -50,6 +50,7 @@ class UserType extends AbstractType
             ])
             ->add('sector', ChoiceType::class, [
                 'label' => 'Service',
+                'placeholder' => '-- Choisissez un secteur --',
                 'choices'  => [
                     'RH' => 'RH',
                     'Informatique' => 'INFORMATIQUE',
@@ -59,6 +60,7 @@ class UserType extends AbstractType
             ])
             ->add('contract', ChoiceType::class, [
                 'label' => 'Type de contrat',
+                'placeholder' => '-- Choisissez un type de contrat --',
                 'choices'  => [
                     'CDI' => 'CDI',
                     'CDD' => 'CDD',
@@ -68,6 +70,7 @@ class UserType extends AbstractType
             ->add('dateContract', DateType::class, [
                 'label' => 'Date de fin de contrat',
                 'required' => false,
+                'widget' => 'single_text'
             ])
         ;
     }

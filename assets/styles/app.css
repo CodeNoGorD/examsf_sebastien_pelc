@@ -11930,6 +11930,10 @@ input {
   font-size: 5rem;
 }
 
+input[type=date] {
+  font-size: 3rem;
+}
+
 .form-select {
   font-size: 3rem;
 }
