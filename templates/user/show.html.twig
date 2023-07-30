@@ -35,7 +35,7 @@
         {% if user.contract == 'CDD'  or user.contract == 'INTERIM' %}
             <tr>
                 <th>Date de fin de contrat</th>
-                <td>{{ user.dateContract ? user.dateContract|date('Y-m-d') : '' }}</td>
+                <td>{{ user.dateContract ? user.dateContract|date('d-m-Y') : '' }}</td>
             </tr>
         {% endif %}
         </tbody>

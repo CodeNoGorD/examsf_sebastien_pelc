@@ -6,8 +6,8 @@
     {{ form_row(form.password) }}
     {{ form_row(form.sector) }}
     {{ form_row(form.contract) }}
-{#{% if form.contract.choices == 'CDD' or form.contract.choices == 'INTERIM' %}#}
-    {{ form_row(form.dateContract) }}
-{#{% endif %}#}
+    {{ form_label(form.dateContract, 'Date de fin de contrat', {'label_attr': {'class': 'd-none lab'}}) }}
+    {{ form_widget(form.dateContract, {'attr': {'class': 'd-none'}}) }}
+
 <button class="btn btn-primary h3 my-3">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
