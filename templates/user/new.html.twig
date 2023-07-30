@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New User{% endblock %}
+{% block title %}AJOUTER UN EMPLOYE{% endblock %}
 
 {% block body %}
-    <h1>Create new User</h1>
+    <h1 class="text-center text-primary my-3">Ajouter un employé</h1>
 
-    {{ include('user/_form.html.twig') }}
+    <div class="container">
+        {{ include('user/_form.html.twig') }}
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+    </div>
+
+    <a class=" d-block text-center my-3" href="{{ path('app_user_list') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M17.026 22.957c10.957-11.421-2.326-20.865-10.384-13.309l2.464 2.352h-9.106v-8.947l2.232 2.229c14.794-13.203 31.51 7.051 14.794 17.675z"/></svg> Retour</a>
 {% endblock %}

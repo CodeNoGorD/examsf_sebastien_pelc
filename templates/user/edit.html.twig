@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit User{% endblock %}
+{% block title %}Modification{% endblock %}
 
 {% block body %}
-    <h1>Edit User</h1>
+    <h1 class="text-primary my-5 text-center">MODIFIER FICHER EMPLOYE</h1>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+    <div class="container">
+        {{ include('user/_form.html.twig', {'button_label': 'METTRE A JOUR'}) }}
+    </div>
 
-    <a href="{{ path('app_user_index') }}">back to list</a>
+    <a class=" d-block text-center my-3" href="{{ path('app_user_list') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M17.026 22.957c10.957-11.421-2.326-20.865-10.384-13.309l2.464 2.352h-9.106v-8.947l2.232 2.229c14.794-13.203 31.51 7.051 14.794 17.675z"/></svg> Retour</a>
 
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

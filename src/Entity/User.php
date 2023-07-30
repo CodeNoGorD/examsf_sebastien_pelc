@@ -29,13 +29,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[Assert\NotBlank(message: 'Veuillez saisir un email.')]
     private ?string $email = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255, nullable: false)]
     private ?string $picture = null;
 
     /**
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\Regex(
+        pattern: '/^(?=.*\d)(?=.*[a-z]).{8,}/',
+        message: 'Veuillez saisir un mot de passe de 8 caractères avec au moins 1 lettre et 1 chiffre.'
+    )]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]

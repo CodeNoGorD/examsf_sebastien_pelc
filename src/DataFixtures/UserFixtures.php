@@ -27,7 +27,7 @@ class UserFixtures extends Fixture
         $testAdmin->setContract('CDI');
 
         $testUser = new User();
-        $testUser->setEmail('gr@humanbooster.com');
+        $testUser->setEmail('test@humanbooster.com');
         $testUser->setRoles(["ROLE_USER"]);
         $encodedPassword = $this->hasher->hashPassword($testUser, 'test');
         $testUser->setPassword($encodedPassword);

@@ -1,60 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}Salarié{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
-    <img src="{{ asset(user.picture) }}" alt="" width="400">
-    <table class="table">
+    <h1 class="text-primary my-5 text-center">{{ user.firstname|capitalize }} {{ user.name }}</h1>
+    <img src="{{ asset(user.picture) }}" alt="" width="600" class="d-block mx-auto">
+    <br/>
+    <table class="table container">
         <tbody>
+        <tr>
+            <th>Matricule</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>Prenom</th>
+            <td>{{ user.firstname|capitalize }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th>Service</th>
+            <td>{{ user.sector }}</td>
+        </tr>
+        <tr>
+            <th>Type de contrat</th>
+            <td>{{ user.contract }}</td>
+        </tr>
+        {% if user.contract == 'CDD'  or user.contract == 'INTERIM' %}
             <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ user.name }}</td>
-            </tr>
-            <tr>
-                <th>Firstname</th>
-                <td>{{ user.firstname }}</td>
-            </tr>
-            <tr>
-                <th>Picture</th>
-                <td>{{ user.picture }}</td>
-            </tr>
-            <tr>
-                <th>Sector</th>
-                <td>{{ user.sector }}</td>
-            </tr>
-            <tr>
-                <th>Contract</th>
-                <td>{{ user.contract }}</td>
-            </tr>
-            <tr>
-                <th>DateContract</th>
+                <th>Date de fin de contrat</th>
                 <td>{{ user.dateContract ? user.dateContract|date('Y-m-d') : '' }}</td>
             </tr>
+        {% endif %}
         </tbody>
     </table>
+<div class="d-flex justify-content-center align-items-center gap-5">
+    {% if (app.user is not null and app.user.hasRole("ROLE_RH")) %}
+    <a class=" text-center my-3 btn btn-primary h3" href="{{ path('app_user_edit', {'id': user.id}) }}">MODIFIER</a>
+   {% endif %}
+    <a class=" d-block text-center my-3" href="{{ path('app_user_list') }}"> <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M17.026 22.957c10.957-11.421-2.326-20.865-10.384-13.309l2.464 2.352h-9.106v-8.947l2.232 2.229c14.794-13.203 31.51 7.051 14.794 17.675z"/></svg> Retour</a>
+</div>
 
 
-
-    <a href="{{ path('app_user_index') }}">back to list</a>
-
-    <a href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
-
-    {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

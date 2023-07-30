@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,11 +18,19 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class)
-            ->add('firstname', TextType::class)
-            ->add('email', TextType::class)
+            ->add('name', TextType::class, [
+                'label' =>'Nom'
+            ])
+            ->add('firstname', TextType::class, [
+                'label' =>'Prenom'
+            ])
+            ->add('email', TextType::class, [
+                'label' =>'Email'
+            ])
             ->add('pictureFile', FileType::class, [
+                'label' => 'Image du profil',
                 'mapped' => false,
+                'required' => $options['required'],
                 'constraints' => [
                     new File([
                         'maxSize' => '4096k',
@@ -36,16 +45,20 @@ class UserType extends AbstractType
                     ])
                 ]
             ])
-            ->add('password', TextType::class)
+            ->add('password', TextType::class, [
+                'label' =>'Mot de passe'
+            ])
             ->add('sector', ChoiceType::class, [
+                'label' => 'Service',
                 'choices'  => [
                     'RH' => 'RH',
-                    'Informatique' => 'Informatique',
-                    'Comptabilité' => 'Comptabilité',
-                    'Direction' => 'Direction'
+                    'Informatique' => 'INFORMATIQUE',
+                    'Comptabilité' => 'COMPTABILITE',
+                    'Direction' => 'DIRECTION'
                 ],
             ])
             ->add('contract', ChoiceType::class, [
+                'label' => 'Type de contrat',
                 'choices'  => [
                     'CDI' => 'CDI',
                     'CDD' => 'CDD',
@@ -53,6 +66,7 @@ class UserType extends AbstractType
                 ],
             ])
             ->add('dateContract', DateType::class, [
+                'label' => 'Date de fin de contrat',
                 'required' => false,
             ])
         ;
@@ -62,6 +76,7 @@ class UserType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'required' => false,
         ]);
     }
 }

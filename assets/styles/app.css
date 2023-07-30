@@ -11923,11 +11923,36 @@ html {
 }
 
 body {
-  font-size: 4rem;
+  font-size: 3.5rem;
+}
+
+input {
+  font-size: 5rem;
+}
+
+.form-select {
+  font-size: 3rem;
+}
+
+.form-control {
+  font-size: 3rem;
+  color: #7346af;
+}
+
+.form-control:focus {
+  color: #7346af;
 }
 
 h1, .h1 {
   font-size: 6rem;
+}
+
+h2, .h2 {
+  font-size: 4.5rem;
+}
+
+h3, .h3 {
+  font-size: 3rem;
 }
 
 li {
@@ -11939,9 +11964,21 @@ li {
   padding: 1rem 2.5rem;
 }
 
+.btn {
+  padding: 1.2rem 2rem;
+  border-radius: 4rem;
+}
+
 a {
+  color: white;
   text-align: center;
   text-decoration: none;
+}
+
+.consult {
+  font-size: 4rem;
+  color: white;
+  text-align: center;
 }
 
 .header {

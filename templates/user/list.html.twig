@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annuaire{% endblock %}
+
+{% block body %}
+    <h1 class="my-5 font-weight-normal text-center text-white h1">Annuaire</h1>
+    {% if (app.user is not null and app.user.hasRole("ROLE_RH")) %}
+        <a href="{{ path('app_user_new') }}" class="btn btn-primary text-center my-3 h3 mx-auto">AJOUTER UN EMPLOYE</a>
+    {% endif %}
+    <div class="container-full">
+        <table class="table table-primary striped shadow table-borderless align-middle">
+            <thead class="text-left">
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Photo</th>
+            <th>Action</th>
+            {% if (app.user is not null and app.user.hasRole("ROLE_RH")) %}
+                <th>Admin</th>
+            {% endif %}
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td class="py-5">{{ user.firstname|capitalize }}</td>
+                    <td class="py-5">{{ user.name }}</td>
+                    <td class="py-5">{{ user.email }}</td>
+                    <td class="py-5"><img src="{{ asset(user.picture) }}" alt="photo profil" width="200"
+                                          class="rounded-circle"></td>
+                    <td class="py-5"><a href="{{ path('app_user_show', {'id': user.id}) }}"
+                                        class="btn btn-secondary consult">CONSULTER</a></td>
+                    {% if (app.user is not null and app.user.hasRole("ROLE_RH")) %}
+                        <td class="py-5">{% include("user/_delete_form.html.twig") %}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

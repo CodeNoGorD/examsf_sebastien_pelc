@@ -1,4 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.name) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.pictureFile) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.sector) }}
+    {{ form_row(form.contract) }}
+{#{% if form.contract.choices == 'CDD' or form.contract.choices == 'INTERIM' %}#}
+    {{ form_row(form.dateContract) }}
+{#{% endif %}#}
+<button class="btn btn-primary h3 my-3">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
