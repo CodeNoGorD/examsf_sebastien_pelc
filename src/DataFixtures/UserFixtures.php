@@ -27,12 +27,12 @@ class UserFixtures extends Fixture
         $testAdmin->setContract('CDI');
 
         $testUser = new User();
-        $testUser->setEmail('test@humanbooster.com');
+        $testUser->setEmail('sp@humanbooster.com');
         $testUser->setRoles(["ROLE_USER"]);
-        $encodedPassword = $this->hasher->hashPassword($testUser, 'test');
+        $encodedPassword = $this->hasher->hashPassword($testUser, 'sebastien1');
         $testUser->setPassword($encodedPassword);
-        $testUser->setName('nom');
-        $testUser->setFirstName('prenom');
+        $testUser->setName('sebastien');
+        $testUser->setFirstName('PELC');
         $testUser->setPicture('test.jpg');
         $testUser->setSector('Informatique');
         $testUser->setContract('CDI');
