@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class UserType extends AbstractType
 {
@@ -47,7 +48,10 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('password', PasswordType::class, [
-                'label' =>'Mot de passe'
+                'label' =>'Mot de passe',
+//                'constraints' => [
+//                    new NotBlank(['message' => 'Veuillez modifier votre mot de passe'])
+//                ]
             ])
             ->add('sector', ChoiceType::class, [
                 'label' => 'Service',

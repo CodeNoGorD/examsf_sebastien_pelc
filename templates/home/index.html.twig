@@ -5,8 +5,11 @@
 {% block body %}
 
 <div class=>
-    <h1 class="text-white my-4 text-center my-5">BIENVENUE SUR ANNUAIRH</h1>
-
+    {% if (app.user) %}
+        <h1 class="text-white my-4 text-center my-5">Bienvenue {{ app.user.firstname|capitalize }} {{ app.user.name }}</h1>
+{% else %}
+    <h1 class="text-white my-4 text-center my-5">Bienvenue ANNUAIRH</h1>
+    {% endif %}
     <div>
         <img src="{{ asset('images/fond_sirh.png') }}" class="d-block mx-auto" width="800" alt="image de fond SIRH">
     </div>

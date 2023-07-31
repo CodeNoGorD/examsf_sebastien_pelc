@@ -39,6 +39,16 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->getEntityManager()->flush();
     }
 
+    public function findByDate(): array
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.dateContract < :val')
+            ->setParameter('val', date("Y-m-d"))
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */
